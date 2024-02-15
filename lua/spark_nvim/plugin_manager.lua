@@ -11,8 +11,8 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-plugins = {import = 'spark_nvim.plugins'}
+local plugins = {import = 'spark_nvim.plugins'}
 
-opts = {}
+local opts = {}
 
 require("lazy").setup(plugins, opts)
