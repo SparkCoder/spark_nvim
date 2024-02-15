@@ -1,6 +1,5 @@
-return { 
+return {
   "nvim-lua/plenary.nvim",
-  name = "plenary", 
-  priority = 900 
+  name = "plenary",
+  priority = 900
 }
-
