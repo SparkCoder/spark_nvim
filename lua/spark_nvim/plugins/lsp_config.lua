@@ -8,16 +8,33 @@ return {
   {
     "williamboman/mason-lspconfig.nvim",
     config = function()
-      require("mason-lspconfig").setup({
-        ensure_installed = { "lua_ls", "biome", "hydra_lsp", "taplo" }
+      local capabilities = require("cmp_nvim_lsp").default_capabilities()
+      local mason_lsp = require("mason-lspconfig")
+      local lspconfig = require("lspconfig")
+
+      mason_lsp.setup({
+        ensure_installed = { "lua_ls", "biome", "hydra_lsp", "taplo", 'rust_analyzer' }
+      })
+      mason_lsp.setup_handlers({
+        function(server)
+          lspconfig[server].setup({ capabilities = capabilities })
+        end
       })
     end
   },
   {
     "neovim/nvim-lspconfig",
     config = function()
-      local lspconfig = require("lspconfig")
-      lspconfig.lua_ls.setup({})
+      -- local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
+      -- local lspconfig = require("lspconfig")
+
+      -- -- LSP Setups
+      -- lspconfig.lua_ls.setup({ capabilities = capabilities })
+      -- lspconfig.biome.setup({ capabilities = capabilities })
+      -- lspconfig.hydra_lsp.setup({ capabilities = capabilities })
+      -- lspconfig.taplo.setup({ capabilities = capabilities })
+
       vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
       vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
       vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
