@@ -8,7 +8,6 @@ return {
       vim.filetype.add({extension = {wgsl = "wgsl"}})
 
       config.setup({
-        ensure_installed = { "lua", "nix", "wgsl", "rust" },
         auto_install = true,
         highlight = { enable = true },
         indent = { enable = true },
