@@ -1,10 +1,10 @@
 # Spark NVIM
-The official neovim config for SparkCoder
+The official neovim config by SparkCoder
 
 ## Install
-1. Download/Clone repo into `~/.config/nvim/`
+1. Download/Clone repo into _~/.config/nvim/_ \
    `git clone https://github.com/SparkCoder/spark_nvim.git ~/.config/nvim/`
-2. Open neovim
+3. Open neovim \
    `nvim .`
-3. Wait for installation
-4. Enjoy :)
+4. Wait for installation
+5. Enjoy :)
